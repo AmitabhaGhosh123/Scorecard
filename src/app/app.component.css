@@ -1,0 +1,103 @@
+.quant {
+    display: block;
+    position: absolute;
+    left: 50%;
+    margin-left: -378px;
+    font-size: 20px;
+}
+
+.verbal {
+    display: block;
+    position: absolute;
+    left: 50%;
+    margin-left: 38px;
+    font-size: 20px;
+}
+
+.quantcurrent {
+    display: block;
+    position: absolute;
+    bottom: 85%;
+    margin-bottom: -50px;
+    margin-left: 300px;
+    font-size: medium;
+}
+
+.verbalcurrent {
+
+    display: block;
+    position: absolute;
+    left: 50%;
+    margin-left: 38px;
+    margin-top: -20px;
+    font-size: medium;
+}
+
+.quant1 {
+    margin-top: 42px;
+    margin-left: 370px;
+    width: 5%;
+}
+
+.quant2 {
+
+    width: 5%;
+    margin-left: 55px;
+}
+
+.quant3 {
+
+    width: 5%;
+    margin-left: 200px;
+}
+
+.quant4 {
+
+    width: 5%;
+    margin-left: 60px;
+}
+
+.quanttarget {
+    display: block;
+    position: absolute;
+    left: 48%;
+    margin-left: -200px;
+    margin-top: -19px;
+}
+
+.verbaltarget {
+
+    display: block;
+    position: absolute;
+    left: 50%;
+    margin-left: 178px;
+    margin-top: -18px;
+}
+
+.container {
+
+    height: 166px;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+}
+
+.btnSubmit {
+
+    margin-top: 49px;
+    margin-left: 470px;
+    background-color: lightblue;
+    height: 32px;
+}
+
+#totalScoreBar {
+
+    width: 1%;
+    height: 30px;
+    background-color: #FFE28A;
+}
+
+#totalScoreProgress {
+    width: 80%;
+    background-color: #F5F5F5;
+    margin-top: 100px;
+}

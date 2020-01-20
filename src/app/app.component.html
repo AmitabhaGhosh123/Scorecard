@@ -1,0 +1,33 @@
+<div style="text-align:center">
+  <h1 style="margin-left: -200px;">
+    Welcome to {{ title }}!
+  </h1>
+</div>
+
+<div class="container">
+  <div class="quant">
+    <label>Quant</label>
+  </div>
+
+  <div class="verbal">
+    <label>Verbal</label>
+  </div>
+
+  <div>
+    <label class="quantcurrent">Current</label>
+    <input type="textbox" id="quant1" name="quant1" class="quant1">
+    <label class="quanttarget">Target</label>
+    <input type="textbox" id="quant2" class="quant2">
+    <label class="verbalcurrent">Current</label>
+    <input type="textbox" id="quant3" class="quant3">
+    <label class="verbaltarget">Target</label>
+    <input type="textbox" id="quant4" class="quant4">
+  </div>
+
+  <button class="btnSubmit" (click)="computeScore()">Submit and Refresh</button>
+
+</div>
+
+<div id="totalScoreProgress">
+  <div id="totalScoreBar"></div>
+</div>
