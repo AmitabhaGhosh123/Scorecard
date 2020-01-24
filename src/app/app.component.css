@@ -2,7 +2,7 @@
     display: block;
     position: absolute;
     left: 50%;
-    margin-left: -378px;
+    margin-left: -657px;
     font-size: 20px;
 }
 
@@ -10,7 +10,7 @@
     display: block;
     position: absolute;
     left: 50%;
-    margin-left: 38px;
+    margin-left: 0px;
     font-size: 20px;
 }
 
@@ -18,9 +18,8 @@
     display: block;
     position: absolute;
     bottom: 85%;
-    margin-bottom: -50px;
-    margin-left: 300px;
-    font-size: medium;
+    margin-bottom: -165px;
+    margin-left: 135px;
 }
 
 .verbalcurrent {
@@ -28,41 +27,43 @@
     display: block;
     position: absolute;
     left: 50%;
-    margin-left: 38px;
-    margin-top: -20px;
-    font-size: medium;
+    margin-left: -162px;
+    margin-top: 8px;
+    color: lightslategray;
 }
 
 .quant1 {
-    margin-top: 42px;
-    margin-left: 370px;
-    width: 5%;
+    width: 29%;
+    margin-left: 209px;
+    margin-top: 172px;
 }
 
 .quant2 {
 
-    width: 5%;
-    margin-left: 55px;
+    width: 29%;
+    margin-left: 210px;
 }
 
 .quant3 {
 
-    width: 5%;
-    margin-left: 200px;
+    width: 9%;
+    margin-left: 869px;
+    margin-top: -16px;
 }
 
 .quant4 {
 
-    width: 5%;
-    margin-left: 60px;
+    width: 9%;
+    margin-left: 870px;
+    margin-top: 30px;
 }
 
 .quanttarget {
     display: block;
     position: absolute;
     left: 48%;
-    margin-left: -200px;
-    margin-top: -19px;
+    margin-left: -267px;
+    margin-top: 4px;
 }
 
 .verbaltarget {
@@ -70,8 +71,9 @@
     display: block;
     position: absolute;
     left: 50%;
-    margin-left: 178px;
-    margin-top: -18px;
+    margin-left: -159px;
+    margin-top: 19px;
+    color: lightslategray;
 }
 
 .container {
@@ -83,21 +85,242 @@
 
 .btnSubmit {
 
-    margin-top: 49px;
-    margin-left: 470px;
-    background-color: lightblue;
-    height: 32px;
+    background-color: #0fa2eb;
+    border-color: #0fa2eb;
+    border-radius: 61px;
+    box-shadow: 0px 0px 2px 0px #999999;
+    font-size: 16px;
+    padding: 0.3rem 1rem;
+    color: #ffffff;
+    width: 173px;
+    cursor: default;
 }
 
 #totalScoreBar {
 
-    width: 1%;
+    width: 48%;
     height: 30px;
-    background-color: #FFE28A;
+    background-color: #0fa2eb;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+#currentQuantScoreBar {
+
+    width: 48%;
+    height: 30px;
+    background-color: #0fa2eb;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+#currentVerbalScoreBar {
+
+    width: 48%;
+    height: 30px;
+    background-color: #0fa2eb;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+#targetScoreBar {
+
+    height: 30px;
+    background-color: #ffe28a;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+    
+}
+
+#targetQuantScoreBar {
+
+    height: 30px;
+    background-color: #ffe28a;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+#targetVerbalScoreBar {
+
+    height: 30px;
+    background-color: #ffe28a;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
 }
 
 #totalScoreProgress {
-    width: 80%;
+    width: 40%;
     background-color: #F5F5F5;
-    margin-top: 100px;
+    margin-top: 81px;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+    margin-left: 20px;
+}
+
+#quantScoreProgress {
+
+    width: 40%;
+    background-color: #F5F5F5;
+    margin-top: 83px;
+    margin-left: 14px;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+#verbalScoreProgress {
+
+    width: 40%;
+    background-color: #F5F5F5;
+    margin-top: 83px;
+    margin-left: 20px;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.marker {
+
+    width: 8px; 
+    height: 20px; 
+    position: absolute;
+    background: #0fa2eb; 
+    margin-top: -53px;
+}
+
+.marker1 {
+
+    width: 8px;
+    height: 20px;
+    position: absolute;
+    background: #FFE28A;
+    margin-left: 1px;
+    margin-top: 2px;
+}
+
+.marker2 {
+
+    width: 8px; 
+    height: 20px; 
+    position: absolute;
+    background: #0fa2eb; 
+    margin-top: -53px;
+    margin-left: 8px;
+}
+
+.marker3 {
+
+    width: 8px;
+    height: 20px;
+    position: absolute;
+    background: #FFE28A;
+    margin-left: 8px;
+    margin-top: 2px;
+}
+
+.marker4 {
+
+    width: 8px; 
+    height: 20px; 
+    position: absolute;
+    background: #0fa2eb; 
+    margin-top: -53px;
+    margin-left: 8px;
+}
+
+.marker5 {
+
+    width: 8px;
+    height: 20px;
+    position: absolute;
+    background: #FFE28A;
+    margin-left: 8px;
+    margin-top: 2px;
+
+}
+
+.total {
+
+    margin-top: 32px;
+}
+
+.markercurrentscore {
+
+    font-weight: normal;
+    margin-top: -31px;
+    margin-left: -9px;
+    color: lightslategray;
+}
+
+.markertargetscore {
+
+    font-weight: normal;
+    margin-left: -2px;
+    color: lightslategray;
+    margin-top: 16px;
+}
+
+.summary {
+    margin-top: 46px;
+    font-weight: normal;
+    color: lightslategray;
+    font-size: 20px;
+}
+
+.summary1 {
+
+    margin-top: 46px;
+    font-weight: normal;
+    color: lightslategray;
+    font-size: 20px;
+}
+
+.summary2 {
+
+    margin-top: 46px;
+    font-weight: normal;
+    color: lightslategray;
+    font-size: 20px;
+}
+
+#difference {
+
+    margin-left: 16px;
+    margin-top: 24px;
+}
+
+#difference1 {
+
+    margin-left: 10px;
+    margin-top: 29px;
+}
+
+#difference2 {
+
+    margin-left: 10px;
+    margin-top: 29px;
+}
+
+#nearbydifference1 {
+    margin-left: 100px;
+    margin-top: 24px;
+}
+
+#nearbydifference2 {
+
+    margin-left: 100px;
+    margin-top: 24px;
+}
+
+#nearbydifference3 {
+
+    margin-left: 100px;
+    margin-top: 29px;
+}
+
+.phx-si-deliverpane-body {
+    color: inherit;
+    margin-bottom: 0;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    color: #999C9E;
 }
