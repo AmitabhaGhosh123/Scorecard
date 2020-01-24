@@ -4,30 +4,167 @@
   </h1>
 </div>
 
-<div class="container">
-  <div class="quant">
-    <label>Quant</label>
+<form name="form1" id="form1">
+  <div class="phx-si-deliverpane-body">
+    <div class="quant">
+      <label>Quant</label>
+    </div>
+
+    <div class="verbal">
+      <label>Verbal</label>
+    </div>
+
+    <div class="row">
+      <div class="form-group col-12 col-md-12">
+        <label class="quantcurrent">Current</label>
+        <div><input type="textbox" class="form-control quant1" id="quant1" name="quant1"> </div>
+      </div>
+
+      <div class="form-group col-12 col-md-12">
+        <label class="quanttarget">Target</label>
+        <div><input type="textbox" class="form-control quant2" id="quant2" name="quant2"></div>
+      </div>
+
+    </div>
   </div>
 
-  <div class="verbal">
-    <label>Verbal</label>
-  </div>
-
-  <div>
-    <label class="quantcurrent">Current</label>
-    <input type="textbox" id="quant1" name="quant1" class="quant1">
-    <label class="quanttarget">Target</label>
-    <input type="textbox" id="quant2" class="quant2">
+  <div class="form-group col-12 col-md-12">
     <label class="verbalcurrent">Current</label>
-    <input type="textbox" id="quant3" class="quant3">
-    <label class="verbaltarget">Target</label>
-    <input type="textbox" id="quant4" class="quant4">
+    <div><input type="textbox" class="form-control quant3" id="quant3" name="quant3"></div>
   </div>
 
-  <button class="btnSubmit" (click)="computeScore()">Submit and Refresh</button>
+  <div class="form-group col-12 col-md-12">
+    <label class="verbaltarget">Target</label>
+    <div><input type="textbox" class="form-control quant4" id="quant4" name="quant4"></div>
+  </div>
+
+  <div style="height:200px;width: 117px;margin: 0 0 0 30%;">
+    <div style="text-align:center">
+      <input type="button" class="btn btnSubmit" value="Submit and Refresh" (click)="computeScore()">
+    </div>
+  </div>
+
+</form>
+
+<div class="total" *ngIf="showGraphs">
+  <b style="font-size: 26px;font-weight: normal;">Total Score</b>
+  <p style="font-size: 26px;">{{totalCurrentScore}}</p>
+</div>
+
+
+<div id="totalScoreProgress">
+  <div id="targetScoreBar">
+
+    <div id="totalScoreBar"></div>
+    <div id="marker" class="marker" *ngIf="showGraphs == true" [ngStyle]="{left:totalCurrentScore + 'px'}">
+      <h3 class="markercurrentscore">{{totalCurrentScore}}</h3>
+      <div id="difference" *ngIf="((totalCurrentScore < totalTargetScore) && (difference > 15))"> +{{difference}} </div>
+      <div id="nearbydifference3" *ngIf="((totalCurrentScore < totalTargetScore) && (difference <= 15))"> +{{difference}} </div>
+    </div>
+
+  </div>
+
+  <div id="marker1" class="marker1" *ngIf="showGraphs == true" [ngStyle]="{left:totalTargetScore + 'px'}">
+    <h3 class="markertargetscore"
+      *ngIf="((totalCurrentScore > totalTargetScore) || (totalCurrentScore < totalTargetScore))">{{totalTargetScore}}
+    </h3>
+  </div>
 
 </div>
 
-<div id="totalScoreProgress">
-  <div id="totalScoreBar"></div>
+
+<p *ngIf="(totalCurrentScore == totalTargetScore) && showGraphs" class="summary">Your estimated total score as per your
+  performance in this mock test is {{totalCurrentScore}} which is equal to your target score.</p>
+<p *ngIf="(totalCurrentScore < totalTargetScore) && showGraphs" class="summary1">Your estimated GMAT score as per your
+  performance in this mock test is {{totalCurrentScore}} which is <b style="font-weight: bold;">{{difference}}</b> lower
+  than your target GMAT score of {{totalTargetScore}}.</p>
+<p *ngIf="(totalCurrentScore > totalTargetScore) && showGraphs" class="summary2">Your estimated total score as per your
+  performance in this mock test is {{totalTargetScore}} which is <b style="font-weight: bold;">{{difference}}</b> higher
+  than your target score of {{totalTargetScore}}.</p>
+
+<div class="row">
+ <div class="col-6 col-md-6">
+  <div class="total" *ngIf="showGraphs">
+   <b style="font-size: 26px;font-weight: normal;">Quant Score</b>
+   <p style="font-size: 26px;"> Q{{currentQuantScore}} </p>
+  </div>
+
+<div id="quantScoreProgress">
+  <div id="targetQuantScoreBar">
+
+    <div id="currentQuantScoreBar"></div>
+    <div id="marker2" class="marker2" *ngIf="showGraphs == true" [ngStyle]="{left:(currentQuantScore+10) + 'px'}">
+      <h3 class="markercurrentscore">Q{{currentQuantScore}}</h3>
+      <div id="difference1" *ngIf="((currentQuantScore < targetQuantScore) && (difference1 >15))"> +{{difference1}} </div>
+      <div id="nearbydifference2" *ngIf="((currentQuantScore < targetQuantScore) && (difference1 <= 15))"> +{{difference1}} </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div id="marker3" class="marker3" *ngIf="((showGraphs == true) && (currentQuantScore < targetQuantScore))" [ngStyle]="{left:(targetQuantScore+20) + 'px'}">
+  <h3 class="markertargetscore"
+    *ngIf="((currentQuantScore > targetQuantScore) || (currentQuantScore < targetQuantScore))">Q{{targetQuantScore}}
+  </h3>
+</div>
+<div id="marker3" class="marker3" *ngIf="(currentQuantScore > targetQuantScore)" [ngStyle]="{left:(targetQuantScore) + 'px'}">
+  <h3 class="markertargetscore"
+    *ngIf="((currentQuantScore > targetQuantScore) || (currentQuantScore < targetQuantScore))">Q{{targetQuantScore}}
+  </h3>
+</div>
+</div>
+
+<p *ngIf="(currentQuantScore == targetQuantScore) && showGraphs" class="summary">Your estimated total score as per your
+  performance in this mock test is Q{{currentQuantScore}} which is equal to your target score.</p>
+<p *ngIf="(currentQuantScore < targetQuantScore) && showGraphs" class="summary1">Your estimated GMAT score as per your
+  performance in this mock test is Q{{currentQuantScore}}<br>which is <b style="font-weight: bold;">{{difference1}}</b>
+  points lower than your target GMAT score of Q{{targetQuantScore}}.</p>
+<p *ngIf="(currentQuantScore > targetQuantScore) && showGraphs" class="summary2">Your estimated total score as per your
+  performance in this mock test is Q{{targetQuantScore}}<br>which is <b style="font-weight: bold;">{{difference1}}</b> points higher than your target score of
+  Q{{targetQuantScore}}.</p>
+
+
+<div class="col-6 col-md-6">
+ <div class="total" *ngIf="showGraphs">
+  <b style="font-size: 26px;font-weight: normal;">Verbal Score</b>
+  <p style="font-size: 26px;">V{{currentVerbalScore}}</p>
+ </div>
+
+<div id="verbalScoreProgress">
+  <div id="targetVerbalScoreBar">
+    <div id="currentVerbalScoreBar"></div>
+    <div id="marker4" class="marker4" *ngIf="showGraphs == true" [ngStyle]="{left:(currentVerbalScore+10) + 'px'}">
+      <h3 class="markercurrentscore">V{{currentVerbalScore}}</h3>
+      <div id="difference2" *ngIf="((currentVerbalScore < targetVerbalScore) && (difference2 > 15))"> +{{difference2}} </div>
+      <div id="nearbydifference1" *ngIf="((currentVerbalScore < targetVerbalScore) && (difference2 <= 15))"> +{{difference2}} </div>
+    </div>
+  </div>
+</div>
+
+<div id="marker5" class="marker5" *ngIf="((showGraphs == true) && (currentVerbalScore < targetQuantScore))" [ngStyle]="{left:(targetVerbalScore+15) + 'px'}">
+  <h3 class="markertargetscore"
+    *ngIf="((currentVerbalScore > targetVerbalScore) || (currentVerbalScore < targetVerbalScore))">
+    V{{targetVerbalScore}}
+  </h3>
+</div>
+
+<div id="marker5" class="marker5" *ngIf="(currentVerbalScore > targetVerbalScore)" [ngStyle]="{left:(targetVerbalScore) + 'px'}">
+  <h3 class="markertargetscore"
+    *ngIf="((currentVerbalScore > targetVerbalScore) || (currentVerbalScore < targetVerbalScore))">
+    V{{targetVerbalScore}}
+  </h3>
+</div>
+
+<p *ngIf="(currentVerbalScore == targetVerbalScore) && showGraphs" class="summary">Your estimated total score as per your
+  performance in this mock test is V{{currentVerbalScore}} which is equal to your target score.</p>
+<p *ngIf="(currentVerbalScore < targetVerbalScore) && showGraphs" class="summary1">Your estimated GMAT score as per your
+  performance in this mock test is V{{currentVerbalScore}}<br>which is <b style="font-weight: bold;">{{difference2}}</b>
+  points lower than your target GMAT score of V{{targetVerbalScore}}.</p>
+<p *ngIf="(currentVerbalScore > targetVerbalScore) && showGraphs" class="summary2">Your estimated total score as per your
+  performance in this mock test is V{{targetVerbalScore}}<br>which is <b style="font-weight: bold;">{{difference2}}</b>
+  points higher than your target score of V{{targetVerbalScore}}.</p>
+
+ </div>
+
 </div>
